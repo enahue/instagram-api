@@ -1,7 +1,7 @@
 **Red Social**
 
-[ ] CRUD de usuarios
-[ ] Registro de Usuarios
+[X] CRUD de usuarios
+[X] Registro de Usuarios
 [ ] Manejar publicaciones (CRUD)
 [ ] Reaccionar a las publicaciones
 [ ] Comentar publicaciones
