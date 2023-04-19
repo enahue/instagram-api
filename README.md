@@ -8,8 +8,6 @@
 [ ] Manejar seguidos y seguidores
 [ ] Notificaciones
 [ ] Publicaciones con imagenes
-
-
 [ ] Feed con todas las publicaciones
 [ ] Solicitudes de amistad
 [ ] Compartir publicaciones
