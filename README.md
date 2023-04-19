@@ -1,5 +1,5 @@
 **Red Social**
-
+*TODO*
 [X] CRUD de usuarios
 [X] Registro de Usuarios
 [ ] Manejar publicaciones (CRUD)
