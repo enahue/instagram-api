@@ -1,8 +1,8 @@
 **Red Social**
 *TODO*
-[X] CRUD de usuarios
-[X] Registro de Usuarios
-[ ] Manejar publicaciones (CRUD)
+[x] CRUD de usuarios
+[x] Registro de Usuarios
+[ ] Manejar Publicaciones (CRUD)
 [ ] Reaccionar a las publicaciones
 [ ] Comentar publicaciones
 [ ] Manejar seguidos y seguidores
@@ -10,7 +10,7 @@
 [ ] Publicaciones con imagenes
 [ ] Feed con todas las publicaciones
 [ ] Solicitudes de amistad
-[ ] Compartir publicaciones
-[ ] Login con diferentes cuentas
 [ ] Amigos en comun
-
+[ ] Compartir publicacion
+[ ] Favoritos
+[ ] Login con diferentes cuentas
