@@ -13,7 +13,7 @@ const config = {
       host: "localhost",
       port: 5432,
       database: "instagram-db",
-      username: "postgres",
+      username: "enahue",
       password: "root",
       //Extra configs
       define: {
@@ -46,7 +46,7 @@ const config = {
       host: "localhost",
       port: 5432,
       database: "instagram-db",
-      username: "postgres",
+      username: "enahue",
       password: "root",
       //Extra configs
       define: {
