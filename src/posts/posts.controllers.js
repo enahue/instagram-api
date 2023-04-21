@@ -1,51 +1,64 @@
-const { UUID } = require("sequelize");
-const Posts = require("../models/posts.models");
 
-const findAllPost = async () => {
-  const Post = await Post.findAll();
-  return Post;
-};
+const uuid = require('uuid')
+const Posts = require('../models/posts.models')
+
+const findAllPosts = async () => {
+    const posts = await Posts.findAll()
+    return posts
+}
 
 const findPostById = async (id) => {
-  const post = await Post.findOne({
-    where: {
-      id: id,
-    },
-  });
-  return post;
-};
-
-
-const createPost = async (potsObj) =>{
-  const newPost = await Post.create({
-    id: UUID.V4(),
-    content: potsObj.content,
-    userId: potsObj.userId
-  })
-   return newPost
+    const post = await Posts.findOne({
+        where: {
+            id: id
+        }
+    })
+    return post
 }
 
-const updatePost = async (postId, postObj) =>{
-  const selectedPost = await Post.findOne({
-    where: {
-      id: postId
-    }
-  })
-  if(!selectedPost) return null
-  const updatePost = await selectedPost.update(postObj)
-  return updatePost
+const createPost = async (postObj) => {
+    const newPost = await Posts.create({
+        id: uuid.v4(),
+        content: postObj.content,
+        userId: postObj.userId
+    })
+    return newPost
 }
 
-const deletePost = async (postId) =>{
-  const selectedPost = await Post.findOne({
-    where:{
-      id: postId
-    }
-  })
+const updatePost = async (postId, postObj) => {
+    const selectedPost = await Posts.findOne({
+        where: {
+            id: postId
+        }
+    })
 
-  if(!selectedPost) return null
-  const updatePost = await selectedPost.update({
-    status:'deleted'
-  })
-  return updatePost
+    if(!selectedPost) return null
+
+    const updatedPost = await selectedPost.update(postObj)
+
+    return updatedPost
+}
+
+const deletePost = async (postId) => {
+    const selectedPost = await Posts.findOne({
+        where: {
+            id: postId
+        }
+    })
+
+    if(!selectedPost) return null
+
+    const updatedPost = await selectedPost.update({
+        status: 'deleted'
+    })
+
+    return updatedPost
+}
+
+module.exports = {
+    findAllPosts,
+    findPostById,
+    createPost,
+    updatePost,
+    deletePost
 }
