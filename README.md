@@ -16,7 +16,7 @@
 [ ] Amigos en comun
 [ ] Compartir publicacion
 [ ] Favoritos
-[ ] Login con diferentes cuentas 
+[ ] Login con diferentes cuentas
 
 pm2
 
