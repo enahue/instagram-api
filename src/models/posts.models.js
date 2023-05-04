@@ -19,8 +19,8 @@ const Posts = db.define('posts', {
             key: 'id'
         }
     },
-    status:{
-        type:  DataTypes.ENUM('active', 'deleted')
+    status: {
+        type: DataTypes.ENUM('active', 'deleted')
     }
 })
 

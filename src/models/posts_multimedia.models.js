@@ -27,8 +27,8 @@ const PostsMultimedia = db.define('posts_multimedia', {
             key: 'id'
         }
     },
-    status:{
-        type:  DataTypes.ENUM('active', 'deleted')
+    status: {
+        type: DataTypes.ENUM('active', 'deleted')
     }
 })
 

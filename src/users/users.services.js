@@ -1,10 +1,25 @@
 const userControllers = require('./users.controllers')
+const { host } = require('../../config')
 //! const { findAllUsers, findUserById, createUser, updateUser } = require('./users.controllers')
 
 const getAllUsers = (req, res) => {
-    userControllers.findAllUsers()
+
+    //TODO Agregar el limit y el offset desde los queries para manejar la paginacion, y generar url's dinamicas
+
+    const offset = Number(req.query.offset) || 0
+    const limit = Number(req.query.limit) || 10
+
+    userControllers.findAllUsers(limit, offset)
         .then((data) => {
-            res.status(200).json({message: `El usuario ${req.user.firstName} hizo esta peticion`, data})
+            const nextPageUrl = (data.count - offset) > limit ? `${host}/api/v1/users?limit=${limit}&offset=${offset + limit}`: null;
+            const prevPageUrl = (offset - limit) >= 0 ? `${host}/api/v1/users?limit=${limit}&offset=${offset - limit}`: null;
+
+            res.status(200).json({
+                count: data.count,
+                next: nextPageUrl,
+                prev: prevPageUrl,
+                results: data.rows
+            })
         })
         .catch((err) => {
             res.status(400).json({message: 'Bad request', err})
@@ -33,7 +48,7 @@ const postNewUser = (req, res) => {
             res.status(201).json(data)
         })
         .catch(err => {
-            res.status(400).json({message: 'Bad request', err})
+            res.status(400).json({message: 'Bad request', err: err.message})
         })
 }
 
